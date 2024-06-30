@@ -19,27 +19,27 @@ public class EmpController {
     @Autowired
     private EmpService employeeService;
 
-    @PostMapping("/employee")
+    @PostMapping("/newemployee")
     public EmpEntity saveEmployee(@RequestBody EmpEntity employee) {
         return employeeService.saveEmployee(employee);
     }
 
-    @GetMapping("/employee")
+    @GetMapping("/employees")
     public List<EmpEntity> getAllEmployees() {
         return employeeService.fetchAllEmployees();
     }
 
-    @GetMapping("/employee/{id}")
+    @GetMapping("/getemployee/{id}")
     public EmpEntity getEmployeeById(@PathVariable("id") Long id) {
         return employeeService.getEmployeeById(id);
     }
 
-    @PutMapping("/employee/{id}")
+    @PutMapping("/editemployee/{id}")
     public EmpEntity updateEmployee(@PathVariable("id") Long id, @RequestBody EmpEntity employee) {
         return employeeService.updateEmployeeById(id, employee);
     }
 
-    @DeleteMapping("/employee/{id}")
+    @DeleteMapping("/deleteemployee/{id}")
     public String deleteEmployee(@PathVariable("id") Long id) {
         return employeeService.deleteDepartmentById(id);
     }
