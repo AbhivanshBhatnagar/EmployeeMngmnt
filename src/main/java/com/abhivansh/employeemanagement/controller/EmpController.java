@@ -24,7 +24,7 @@ public class EmpController {
         return employeeService.saveEmployee(employee);
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/allemployees")
     public List<EmpEntity> getAllEmployees() {
         return employeeService.fetchAllEmployees();
     }
